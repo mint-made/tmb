@@ -1,6 +1,8 @@
 <template>
   <div class="about">
-    <h1>Questions Page</h1>
+    <h2 class="text-light">
+      <b>Strategy:</b> Business and Vendor Current and Goals
+    </h2>
     <QuestionSlider
       v-for="question in questions"
       :key="question.topic"
@@ -25,4 +27,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.about {
+  padding-top: 10px;
+}
+</style>

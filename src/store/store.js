@@ -198,7 +198,7 @@ export const store = new Vuex.Store({
         },
         label: {
           start: "Open, like to manipulate data",
-          end: "closed, leaving data as is"
+          end: "Closed, leaving data as is"
         }
       },
       {
@@ -221,14 +221,12 @@ export const store = new Vuex.Store({
   getters: {},
   mutations: {
     UPDATESTARTVALUE(state, payload) {
-      console.log("start", payload);
       const question = state.questions.find(
         question => question.topic === payload.topic
       );
       question.value.start = payload.value;
     },
     UPDATEENDVALUE(state, payload) {
-      console.log("end", payload);
       const question = state.questions.find(
         question => question.topic === payload.topic
       );
@@ -240,7 +238,6 @@ export const store = new Vuex.Store({
       const keys = payload.id.split("-");
       const topic = keys[0];
       const startOrEnd = keys[1];
-      console.log(topic, startOrEnd);
       if (startOrEnd === "start") {
         commit("UPDATESTARTVALUE", {
           topic: topic,
