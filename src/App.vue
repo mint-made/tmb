@@ -71,6 +71,9 @@ body {
 .mb-0 {
   margin-bottom: 0px;
 }
+.mt-2 {
+  margin-top: 10px;
+}
 .text-black {
   color: rgb(0, 0, 0);
 }
@@ -90,6 +93,44 @@ body {
 }
 .mw-1000 {
   max-width: 1000px;
+}
+
+//containers
+.container-light {
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 3px solid $darker-blue;
+  border-radius: 10px;
+  padding: 5px;
+  background: rgba(195, 224, 243, 0.247);
+}
+
+//buttons
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 2px solid black;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-x {
+  background-color: brown;
+  border-color: green;
+  color: green;
+  &:hover {
+    background-color: green;
+    color: grey;
+  }
 }
 
 //Sliders

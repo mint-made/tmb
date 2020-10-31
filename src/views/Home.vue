@@ -8,7 +8,7 @@
       are two simple instructions:
     </h4>
 
-    <div id="container">
+    <div class="container-light">
       <div class="instructions-container">
         <div><h1>1.</h1></div>
         <div>
@@ -68,15 +68,6 @@ $primary-blue: #7c97af;
 $darker-blue: #52779c;
 $darkest-blue: #2c3e50;
 
-#container {
-  max-width: 1000px;
-  margin: auto;
-  margin-bottom: 10px;
-  border: 3px solid $darker-blue;
-  border-radius: 10px;
-  padding: 5px;
-  background: rgba(195, 224, 243, 0.247);
-}
 .instructions-container {
   display: flex;
 }

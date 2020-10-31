@@ -1,10 +1,12 @@
 <template>
   <div class="about">
-    <h2
-      class="text-light
+    <div class="container-light">
+      <h2
+        class="text-light
     "
-    >
-      This is an about page
-    </h2>
+      >
+        This is an about page!
+      </h2>
+    </div>
   </div>
 </template>
