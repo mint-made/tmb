@@ -71,4 +71,8 @@ $darkest-blue: #2c3e50;
 .instructions-container {
   display: flex;
 }
+.home {
+  margin: auto;
+  max-width: 1000px;
+}
 </style>
