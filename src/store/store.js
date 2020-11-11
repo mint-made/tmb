@@ -231,6 +231,20 @@ export const store = new Vuex.Store({
         question => question.topic === payload.topic
       );
       question.value.end = payload.value;
+    },
+    POSTDATA(state) {
+      const dataSet = [];
+      state.questions.forEach(question => {
+        const dataItem = {
+          question: question.question,
+          value: {
+            start: question.value.start,
+            end: question.value.end
+          }
+        };
+        dataSet.push(dataItem);
+      });
+      console.log(dataSet);
     }
   },
   actions: {
@@ -249,6 +263,9 @@ export const store = new Vuex.Store({
           value: payload.value
         });
       }
+    },
+    logValues({ commit }) {
+      commit("POSTDATA");
     }
   }
 });

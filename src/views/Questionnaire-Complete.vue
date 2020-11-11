@@ -5,7 +5,8 @@
         class="text-light
     "
       >
-        This is an about page!
+        Thankyou for taking the time to submit your questionnaire, we will be in
+        touch with you shortly.
       </h2>
     </div>
   </div>

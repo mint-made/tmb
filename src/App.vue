@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Instructions</router-link>
-      <router-link to="/about">About</router-link>
       <router-link to="/questions">Questions</router-link>
     </div>
+    <h2 class="text-light mb-0">Technology Myers Briggs</h2>
     <div id="router-view-container">
       <router-view />
     </div>
@@ -157,15 +157,7 @@ body {
 .slider:active {
   outline: none;
 }
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 30px;
-  height: 30px;
-  background: #f18d6f;
-  cursor: pointer;
-  border-radius: 20px;
-}
+//Firefox
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
@@ -179,7 +171,25 @@ body {
   background: #f18d6f;
   border: 3px#f16236 solid;
 }
-.slider-end::-moz-range-thumb,
+.slider-end::-moz-range-thumb {
+  background: #8873b9;
+  border: 3px#5a4097 solid;
+}
+
+//Chrome + Safari
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #f18d6f;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.slider-start::-webkit-slider-thumb {
+  background: #f18d6f;
+  border: 3px#f16236 solid;
+}
 .slider-end::-webkit-slider-thumb {
   background: #8873b9;
   border: 3px#5a4097 solid;

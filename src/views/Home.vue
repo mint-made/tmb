@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h2 class="text-light mb-0">Technology Myers Briggs</h2>
     <h4 class="text-light m-0">About this Excercise</h4>
     <h4 class="text-light">
       This document is abstract and helps us decide HOW we will approach
@@ -67,6 +66,7 @@ export default {
 $primary-blue: #7c97af;
 $darker-blue: #52779c;
 $darkest-blue: #2c3e50;
+$white: #e7e7e7;
 
 .instructions-container {
   display: flex;
