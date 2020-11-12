@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
+      <router-link to="/Register">Register</router-link>
+      <router-link to="/login">Log In</router-link>
       <router-link to="/">Instructions</router-link>
       <router-link to="/questions">Questions</router-link>
+      <top-header></top-header>
     </div>
     <h2 class="text-light mb-0">Technology Myers Briggs</h2>
     <div id="router-view-container">
@@ -11,11 +14,20 @@
   </div>
 </template>
 
+<script>
+import Header from "./components/Top-Header";
+export default {
+  components: {
+    "top-header": Header
+  }
+};
+</script>
 <style lang="scss">
 /*Base Color Scheme */
 $primary-blue: #7c97af;
 $darker-blue: #52779c;
 $darkest-blue: #2c3e50;
+$white: #e7e7e7;
 
 body {
   margin: 0px;
@@ -193,5 +205,34 @@ body {
 .slider-end::-webkit-slider-thumb {
   background: #8873b9;
   border: 3px#5a4097 solid;
+}
+
+//button
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 20px 0px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 2px solid black;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-x {
+  background-color: $darkest-blue;
+  border-color: $darkest-blue;
+  color: $white;
+  &:hover {
+    background-color: $primary-blue;
+    color: $darkest-blue;
+  }
 }
 </style>

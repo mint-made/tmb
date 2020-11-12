@@ -3,24 +3,48 @@
     <h2 class="text-light">
       <b>Strategy:</b> Business and Vendor Current and Goals
     </h2>
-    <QuestionSlider
+    <dual-slider
       v-for="question in questions"
       :key="question.topic"
       :questionData="question"
-    />
-    <button @click="submitData" class="btn btn-x">Submit</button>
+    ></dual-slider>
+
+    <div class="container">
+      <div>
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Your name.."
+          />
+
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="Your last name.."
+          />
+        </form>
+      </div>
+      <button @click="submitData" class="btn btn-x">
+        Submit Questionnaire
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import QuestionSlider from "@/components/QuestionSlider.vue";
+import DualSlider from "@/components/Dual-Slider.vue";
 import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Questions",
   components: {
-    QuestionSlider
+    DualSlider
   },
   computed: {
     ...mapState(["questions"])
@@ -57,36 +81,15 @@ $green: rgb(0, 173, 0);
 .about {
   padding-top: 10px;
 }
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin: 20px 0px;
-  font-weight: 700;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  border: 2px solid black;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-$primary-blue: #7c97af;
-$darker-blue: #52779c;
-$darkest-blue: #2c3e50;
-$white: #e7e7e7;
-
-.btn-x {
-  background-color: $darkest-blue;
-  border-color: $darkest-blue;
-  color: $white;
-  &:hover {
-    background-color: $primary-blue;
-    color: $darkest-blue;
-  }
-}
 </style>
+
+/* import QuestionSlider from "@/components/QuestionSlider.vue"; register the
+component
+
+<question-slider
+  v-for="question in questions"
+  :key="question.topic"
+  :questionData="question"
+/>
+
+*/
