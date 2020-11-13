@@ -3,7 +3,7 @@
     <div class="flex my-10">
       <div class="flex align-center">
         <img
-          src="../assets/icons/Icons for Tom/Sliders.png"
+          src="../assets/icons/Sliders.png"
           alt="sliders-icon"
           class="icon"
         />
@@ -69,7 +69,7 @@
 
 <script>
 export default {
-  name: "Home",
+  name: "Home"
 };
 </script>
 <style lang="scss">

@@ -3,7 +3,7 @@
     <div class="flex my-10">
       <div class="flex align-center">
         <img
-          src="../assets/icons/Icons for Tom/Sliders.png"
+          src="../assets/icons/Sliders.png"
           alt="sliders-icon"
           class="icon"
         />
@@ -25,25 +25,6 @@
     ></dual-slider>
 
     <div class="container">
-      <div>
-        <form action="/action_page.php">
-          <label for="fname">First Name</label>
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="Your name.."
-          />
-
-          <label for="lname">Last Name</label>
-          <input
-            type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Your last name.."
-          />
-        </form>
-      </div>
       <button @click="submitData" class="btn btn-x">
         Submit Questionnaire
       </button>

@@ -1,9 +1,9 @@
 <template>
   <div class="m-auto mw-800">
-    <div class="flex justify-center my-10">
+    <div class="flex my-10">
       <div class="flex align-center">
         <img
-          src="../assets/icons/Icons for Tom/Sliders.png"
+          src="../assets/icons/Sliders.png"
           alt="sliders-icon"
           class="icon"
         />
@@ -11,7 +11,7 @@
       <div class="pl-10 text-left">
         <h1 class="text-light m-0">TECHNOLOGY MYERS BRIGGS</h1>
         <h4 class="text-light m-0 letter-spacing-3">
-          BUSINESS APPROACH TO TECH
+          BUSINESS AND VENDOR STRATEGY
         </h4>
       </div>
     </div>
@@ -37,7 +37,7 @@ export default {
     return {
       email: "",
       password: "",
-      error: "",
+      error: ""
     };
   },
   methods: {
@@ -45,15 +45,15 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then((data) => {
+        .then(data => {
           console.log(data);
           this.$router.replace({ name: "Home" });
         })
-        .catch((error) => {
+        .catch(error => {
           this.error = error;
         });
-    },
-  },
+    }
+  }
 };
 </script>
 

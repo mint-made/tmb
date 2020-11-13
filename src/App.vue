@@ -91,6 +91,9 @@ body {
 .m-auto {
   margin: auto;
 }
+.pl-5 {
+  padding-left: 10px;
+}
 .pl-10 {
   padding-left: 10px;
 }
@@ -108,6 +111,12 @@ body {
 }
 .text-large {
   font-size: 50px;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
 }
 .italic {
   font-style: italic;
@@ -132,10 +141,7 @@ body {
 }
 .icon {
   height: 50px;
-  width: 50px;
-}
-.text-left {
-  text-align: left;
+  width: auto;
 }
 .flex {
   display: flex;
@@ -145,6 +151,12 @@ body {
 }
 .align-center {
   align-items: center;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-space-around {
+  justify-content: space-around;
 }
 
 //containers
