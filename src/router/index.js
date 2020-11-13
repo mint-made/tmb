@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
-import Questions from "../views/Questions.vue";
+import Questionnaire from "../views/Questionnaire.vue";
 import Register from "../views/Register.vue";
 
 import firebase from "firebase/app";
@@ -23,9 +23,9 @@ const routes = [
     component: Login
   },
   {
-    path: "/questions",
-    name: "Questions",
-    component: Questions,
+    path: "/questionnaire",
+    name: "Questionnaire",
+    component: Questionnaire,
     meta: { requiresAuth: true }
   },
   {

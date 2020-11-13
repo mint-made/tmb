@@ -1,13 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/Register">Register</router-link>
       <router-link to="/login">Log In</router-link>
       <router-link to="/">Instructions</router-link>
-      <router-link to="/questions">Questions</router-link>
+      <router-link to="/questionnaire">TMB-Questionnaire</router-link>
       <top-header></top-header>
     </div>
-    <h2 class="text-light mb-0">Technology Myers Briggs</h2>
     <div id="router-view-container">
       <router-view />
     </div>
@@ -18,8 +16,8 @@
 import Header from "./components/Top-Header";
 export default {
   components: {
-    "top-header": Header
-  }
+    "top-header": Header,
+  },
 };
 </script>
 <style lang="scss">
@@ -37,10 +35,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  overflow: overlay;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -58,7 +57,7 @@ body {
   padding: 14px;
 
   a {
-    color: #e7e7e7;
+    color: #ffffff;
     padding: 15px;
     text-decoration: none;
 
@@ -86,15 +85,40 @@ body {
 .mt-2 {
   margin-top: 10px;
 }
+.my-10 {
+  margin: 10px 0px;
+}
+.m-auto {
+  margin: auto;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.px-50 {
+  padding: 0px 50px;
+}
 .text-black {
   color: rgb(0, 0, 0);
+}
+.text-dark {
+  color: #104c7e;
+}
+.text-light {
+  color: #ffffff;
+}
+.text-large {
+  font-size: 50px;
+}
+.italic {
+  font-style: italic;
 }
 .underline {
   text-decoration: underline;
 }
-.text-light {
-  color: #e7e7e7;
+.letter-spacing-3 {
+  letter-spacing: 3px;
 }
+
 .vertical-align {
   display: flex;
   align-items: center;
@@ -103,8 +127,24 @@ body {
   display: flex;
   justify-content: center;
 }
-.mw-1000 {
-  max-width: 1000px;
+.mw-800 {
+  max-width: 800px;
+}
+.icon {
+  height: 50px;
+  width: 50px;
+}
+.text-left {
+  text-align: left;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
 }
 
 //containers
@@ -150,10 +190,9 @@ body {
 .slider {
   -webkit-appearance: none;
   width: 95%;
-  height: 25px;
-  background: #d3d3d3;
+  height: 10px;
+  background: #ffffff53;
   outline: none;
-  opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   cursor: pointer;
@@ -180,12 +219,12 @@ body {
 }
 .slider-start::-moz-range-thumb,
 .slider-start::-webkit-slider-thumb {
-  background: #f18d6f;
-  border: 3px#f16236 solid;
+  background: #fbbaa0;
+  border: 3px#f98c61 solid;
 }
 .slider-end::-moz-range-thumb {
-  background: #8873b9;
-  border: 3px#5a4097 solid;
+  background: #c4bae5;
+  border: 3px#9d8cd3 solid;
 }
 
 //Chrome + Safari
@@ -199,12 +238,12 @@ body {
   border-radius: 20px;
 }
 .slider-start::-webkit-slider-thumb {
-  background: #f18d6f;
-  border: 3px#f16236 solid;
+  background: #fbbaa0;
+  border: 3px#f98c61 solid;
 }
 .slider-end::-webkit-slider-thumb {
-  background: #8873b9;
-  border: 3px#5a4097 solid;
+  background: #c4bae5;
+  border: 3px#9d8cd3 solid;
 }
 
 //button

@@ -1,22 +1,34 @@
 <template>
-  <div class="home">
-    <h4 class="text-light m-0">About this Excercise</h4>
-    <h4 class="text-light">
+  <div class="m-auto mw-800 px-50">
+    <div class="flex my-10">
+      <div class="flex align-center">
+        <img
+          src="../assets/icons/Icons for Tom/Sliders.png"
+          alt="sliders-icon"
+          class="icon"
+        />
+      </div>
+      <div class="pl-10 text-left">
+        <h1 class="text-light m-0">TECHNOLOGY MYERS BRIGGS</h1>
+        <h4 class="text-light m-0 letter-spacing-3">ABOUT THIS EXCERCISE</h4>
+      </div>
+    </div>
+    <h3 class="text-light text-left italic">
       This document is abstract and helps us decide HOW we will approach
       projects and technology so that we set up a consistent framework. There
       are two simple instructions:
-    </h4>
+    </h3>
 
-    <div class="container-light">
-      <div class="instructions-container">
-        <div><h1>1.</h1></div>
-        <div>
-          <p class="text-light">
+    <div class="instructions-container">
+      <div class="flex">
+        <div><h1 class="text-dark text-large m-0">1</h1></div>
+        <div class="flex vertical-align">
+          <p class="text-light text-left m-0">
             For each line on each page, slide the orange dot to the proper
             location on the question’s continuum to describe the current state.
           </p>
         </div>
-        <div class="vertical-align">
+        <div class="flex vertical-align pl-10">
           <input
             type="range"
             min="1"
@@ -27,16 +39,16 @@
           />
         </div>
       </div>
-      <div class="instructions-container">
-        <div><h1>2.</h1></div>
-        <div>
-          <p class="text-light">
+      <div class="flex">
+        <div><h1 class="text-dark text-large m-0">2</h1></div>
+        <div class="flex vertical-align">
+          <p class="text-light text-left m-0">
             For each line on each page, slide the purple dot to the proper
             position on the question’s continuum to reflect your desire/goal
             state.
           </p>
         </div>
-        <div class="vertical-align">
+        <div class="flex vertical-align pl-10">
           <input
             type="range"
             min="1"
@@ -48,10 +60,10 @@
         </div>
       </div>
     </div>
-    <h4 class="text-light">
+    <h3 class="text-light text-left italic">
       There are no right or wrong answers, and if you’re unsure about a
       question. Just work alone. It might take 15 minutes or 2 hours.
-    </h4>
+    </h3>
   </div>
 </template>
 
@@ -68,10 +80,7 @@ $darkest-blue: #2c3e50;
 $white: #e7e7e7;
 
 .instructions-container {
-  display: flex;
-}
-.home {
+  max-width: 700px;
   margin: auto;
-  max-width: 1000px;
 }
 </style>

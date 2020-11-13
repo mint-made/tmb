@@ -1,5 +1,20 @@
 <template>
-  <div class="">
+  <div class="mw-800 m-auto px-50">
+    <div class="flex my-10">
+      <div class="flex align-center">
+        <img
+          src="../assets/icons/Icons for Tom/Sliders.png"
+          alt="sliders-icon"
+          class="icon"
+        />
+      </div>
+      <div class="pl-10 text-left">
+        <h1 class="text-light m-0">TECHNOLOGY MYERS BRIGGS</h1>
+        <h4 class="text-light m-0 letter-spacing-3">
+          BUSINESS APPROACH TO TECH
+        </h4>
+      </div>
+    </div>
     <h2 class="text-light">
       <b>Strategy:</b> Business and Vendor Current and Goals
     </h2>
@@ -44,22 +59,22 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "Questions",
   components: {
-    DualSlider
+    DualSlider,
   },
   computed: {
-    ...mapState(["questions"])
+    ...mapState(["questions"]),
   },
   methods: {
     ...mapActions({
-      logValues: "logValues"
+      logValues: "logValues",
     }),
     submitData() {
       this.logValues();
       this.$router.push({
-        name: "Questionnaire-Complete"
+        name: "Questionnaire-Complete",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -47,14 +47,14 @@ export default {
   props: {
     questionData: Object,
     startValue: Number,
-    endValue: Number,
+    endValue: Number
   },
   data() {
     return {
       minThumb: this.questionData.value.start,
       maxThumb: this.questionData.value.end,
       spacing: 10,
-      topic: this.questionData.topic,
+      topic: this.questionData.topic
     };
   },
   methods: {
@@ -63,16 +63,16 @@ export default {
       const payload = {
         value: {
           start: this.minThumb,
-          end: this.maxThumb,
+          end: this.maxThumb
         },
-        topic: this.topic,
+        topic: this.topic
       };
       console.log("update value(payload =", payload);
       this.updateValue(payload);
     },
     capitalize: function(word) {
       return word.charAt(0).toUpperCase() + word.slice(1);
-    },
+    }
   },
   computed: {
     sliderMin: {
@@ -92,7 +92,7 @@ export default {
         } else {
           this.minThumb = val;
         }
-      },
+      }
     },
     sliderMax: {
       get: function() {
@@ -111,9 +111,9 @@ export default {
         } else {
           this.maxThumb = val;
         }
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 
@@ -211,12 +211,12 @@ input.dual-slider {
     margin-top: -7px;
   }
   &.thumb-min::-webkit-slider-thumb {
-    background: #f18d6f;
-    border: 3px#f16236 solid;
+    background: #fbbaa0;
+    border: 3px#f98c61 solid;
   }
   &.thumb-max::-webkit-slider-thumb {
-    background: #8873b9;
-    border: 3px#5a4097 solid;
+    background: #c4bae5;
+    border: 3px#9d8cd3 solid;
   }
 }
 </style>
