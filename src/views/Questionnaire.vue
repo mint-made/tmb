@@ -15,7 +15,7 @@
         </h4>
       </div>
     </div>
-    <h2 class="text-light">
+    <h2 class="text-light text-left">
       <b>Strategy:</b> Business and Vendor Current and Goals
     </h2>
     <dual-slider
@@ -25,7 +25,7 @@
     ></dual-slider>
 
     <div class="container">
-      <button @click="submitData" class="btn btn-x">
+      <button @click="submitData" class="btn btn-x" id="btn-submit">
         Submit Questionnaire
       </button>
     </div>
@@ -40,22 +40,22 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "Questions",
   components: {
-    DualSlider,
+    DualSlider
   },
   computed: {
-    ...mapState(["questions"]),
+    ...mapState(["questions"])
   },
   methods: {
     ...mapActions({
-      logValues: "logValues",
+      logValues: "logValues"
     }),
     submitData() {
       this.logValues();
       this.$router.push({
-        name: "Questionnaire-Complete",
+        name: "Questionnaire-Complete"
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -76,6 +76,9 @@ $green: rgb(0, 173, 0);
 
 .about {
   padding-top: 10px;
+}
+#btn-submit {
+  margin-bottom: 100px;
 }
 </style>
 

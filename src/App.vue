@@ -22,10 +22,16 @@ export default {
 </script>
 <style lang="scss">
 /*Base Color Scheme */
-$primary-blue: #7c97af;
+$primary-blue: #7d98b0;
 $darker-blue: #52779c;
 $darkest-blue: #2c3e50;
-$white: #e7e7e7;
+$white: #ffffff;
+
+@font-face {
+  font-family: "Heebo";
+  src: local("Heebo"),
+    url("./fonts/Heebo-VariableFont_wght.ttf") format("truetype");
+}
 
 body {
   margin: 0px;
@@ -39,7 +45,7 @@ body {
 }
 
 #app {
-  font-family: sans-serif, Helvetica, Arial;
+  font-family: Heebo, sans-serif, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -73,90 +79,6 @@ body {
 
 #router-view-container {
   padding: 5px;
-}
-
-// Utility
-.m-0 {
-  margin: 0px;
-}
-.mb-0 {
-  margin-bottom: 0px;
-}
-.mt-2 {
-  margin-top: 10px;
-}
-.my-10 {
-  margin: 10px 0px;
-}
-.m-auto {
-  margin: auto;
-}
-.pl-5 {
-  padding-left: 10px;
-}
-.pl-10 {
-  padding-left: 10px;
-}
-.px-50 {
-  padding: 0px 50px;
-}
-.text-black {
-  color: rgb(0, 0, 0);
-}
-.text-dark {
-  color: #104c7e;
-}
-.text-light {
-  color: #ffffff;
-}
-.text-large {
-  font-size: 50px;
-}
-.text-left {
-  text-align: left;
-}
-.text-right {
-  text-align: right;
-}
-.italic {
-  font-style: italic;
-}
-.underline {
-  text-decoration: underline;
-}
-.letter-spacing-3 {
-  letter-spacing: 3px;
-}
-
-.vertical-align {
-  display: flex;
-  align-items: center;
-}
-.horizontal-align {
-  display: flex;
-  justify-content: center;
-}
-.mw-800 {
-  max-width: 800px;
-}
-.icon {
-  height: 50px;
-  width: auto;
-}
-.flex {
-  display: flex;
-}
-.justify-center {
-  justify-content: center;
-}
-.align-center {
-  align-items: center;
-}
-.justify-space-between {
-  justify-content: space-between;
-}
-.justify-space-around {
-  justify-content: space-around;
 }
 
 //containers
@@ -243,11 +165,11 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: #f18d6f;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 .slider-start::-webkit-slider-thumb {
   background: #fbbaa0;
@@ -282,8 +204,145 @@ body {
   border-color: $darkest-blue;
   color: $white;
   &:hover {
-    background-color: $primary-blue;
+    background-color: #7d98b08e;
     color: $darkest-blue;
   }
+}
+.btn-sign-out {
+  background-color: $darkest-blue;
+  border-color: $primary-blue;
+  color: $white;
+  padding: 2px 8px;
+  &:hover {
+    background-color: $primary-blue;
+    color: $white;
+  }
+}
+
+//Form Styling
+input.text-input {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 300px;
+  height: 20px;
+  padding: 10px;
+  margin: 20px auto;
+}
+.error {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  width: 300px;
+  margin: auto;
+}
+
+// Utility
+.m-0 {
+  margin: 0px;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+.mt-2 {
+  margin-top: 10px;
+}
+.my-10 {
+  margin: 10px 0px;
+}
+.m-auto {
+  margin: auto;
+}
+.pl-5 {
+  padding-left: 10px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.px-50 {
+  padding: 0px 50px;
+}
+.text-black {
+  color: rgb(0, 0, 0);
+}
+.text-dark {
+  color: #104c7e;
+}
+.text-light {
+  color: #ffffff;
+}
+.text-large {
+  font-size: 50px;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+.letter-spacing-3 {
+  letter-spacing: 3px;
+  line-height: 0.5;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+.horizontal-align {
+  display: flex;
+  justify-content: center;
+}
+.mw-800 {
+  max-width: 800px;
+}
+.icon {
+  height: 58px;
+  width: auto;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-space-around {
+  justify-content: space-around;
 }
 </style>

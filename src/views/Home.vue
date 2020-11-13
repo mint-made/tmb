@@ -64,12 +64,22 @@
       There are no right or wrong answers, and if you’re unsure about a
       question. Just work alone. It might take 15 minutes or 2 hours.
     </h3>
+    <button @click="startQuestionnaire()" class="btn btn-x" id="btn-submit">
+      Start Questionnaire
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  methods: {
+    startQuestionnaire() {
+      this.$router.push({
+        name: "Questionnaire"
+      });
+    }
+  }
 };
 </script>
 <style lang="scss">

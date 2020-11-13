@@ -15,15 +15,25 @@
         </h4>
       </div>
     </div>
-    <h3>Please sign in to continue</h3>
+    <h3 class="text-light">Please sign in to continue</h3>
     <form @submit.prevent="pressed">
       <div class="login">
-        <input type="text" placeholder="login" v-model="email" />
+        <input
+          type="text"
+          placeholder="username/email"
+          v-model="email"
+          class="text-input"
+        />
       </div>
       <div class="password">
-        <input type="password" placeholder="password" v-model="password" />
+        <input
+          type="password"
+          placeholder="password"
+          v-model="password"
+          class="text-input"
+        />
       </div>
-      <button>Login</button>
+      <button class="btn btn-x mt-0">Log in</button>
     </form>
     <div class="error" v-if="error">{{ error.message }}</div>
   </div>
@@ -37,7 +47,7 @@ export default {
     return {
       email: "",
       password: "",
-      error: ""
+      error: "",
     };
   },
   methods: {
@@ -45,34 +55,20 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then(data => {
+        .then((data) => {
           console.log(data);
           this.$router.replace({ name: "Home" });
         })
-        .catch(error => {
+        .catch((error) => {
           this.error = error;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 div {
   color: inherit;
-}
-input {
-  width: 400px;
-  padding: 30px;
-  margin: 20px;
-  font-size: 21px;
-}
-button {
-  width: 400px;
-  height: 75px;
-  font-size: 100%;
-}
-.error {
-  color: red;
 }
 </style>

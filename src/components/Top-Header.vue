@@ -1,10 +1,9 @@
 <template>
   <div class="signout-container">
     <div class="one-line">
-      Logged in:
-      <div v-if="loggedIn">Yes</div>
-      <div v-else>No</div>
-      <button v-if="loggedIn" class="but" @click="signOut">Sign out</button>
+      <button v-if="loggedIn" class="btn btn-sign-out" @click="signOut">
+        Sign out
+      </button>
     </div>
   </div>
 </template>

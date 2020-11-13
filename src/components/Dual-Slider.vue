@@ -1,7 +1,7 @@
 <template>
-  <div class="question-container">
+  <div class="question-container mb-20">
     <div class="slider-question">
-      <div class="flex align-center">
+      <div class="flex align-center mb-5">
         <img class="icon" :src="questionData.icon" alt="" />
         <h2 class="m-0 text-left text-light pl-10">
           {{ capitalize(questionData.topic) }}
@@ -34,10 +34,10 @@
       </div>
 
       <div class="slider-label flex justify-space-between">
-        <h4 class="m-0 text-light text-left">
+        <h4 class="m-0 text-light text-left label">
           {{ capitalize(questionData.label.start) }}
         </h4>
-        <h4 class="m-0 text-light text-right">
+        <h4 class="m-0 text-light text-right label">
           {{ capitalize(questionData.label.end) }}
         </h4>
       </div>
@@ -58,7 +58,7 @@ export default {
     return {
       minThumb: this.questionData.value.start,
       maxThumb: this.questionData.value.end,
-      spacing: 10,
+      spacing: 6,
       topic: this.questionData.topic,
     };
   },
@@ -137,10 +137,7 @@ $darkest-blue: #2c3e50;
   margin: auto;
   margin-bottom: 10px;
   display: flex;
-  border: 3px solid $darker-blue;
-  border-radius: 10px;
   padding: 5px;
-  background: rgba(195, 224, 243, 0.247);
   .slider-container {
     display: flex;
     flex-direction: column;
@@ -154,11 +151,14 @@ $darkest-blue: #2c3e50;
       margin-bottom: 10px;
     }
     .slider-label {
+      .label {
+        max-width: 150px;
+      }
     }
   }
   .slider-question {
-    max-width: 300px;
-    padding: 5px;
+    max-width: 290px;
+    padding-right: 25px;
   }
 }
 

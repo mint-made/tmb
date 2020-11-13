@@ -1,15 +1,40 @@
 <template>
-  <div>
+  <div class="mw-800 m-auto">
+    <div class="flex my-10">
+      <div class="flex align-center">
+        <img
+          src="../assets/icons/Sliders.png"
+          alt="sliders-icon"
+          class="icon"
+        />
+      </div>
+      <div class="pl-10 text-left">
+        <h1 class="text-light m-0">TECHNOLOGY MYERS BRIGGS</h1>
+        <h4 class="text-light m-0 letter-spacing-3">
+          BUSINESS AND VENDOR STRATEGY
+        </h4>
+      </div>
+    </div>
+    <h3 class="text-light">Please Register to continue</h3>
     <div class="error" v-if="error">{{ error.message }}</div>
     <form @submit.prevent="pressed">
-      Register
       <div class="email">
-        <input type="email" v-model="email" placeholder="email" />
+        <input
+          type="email"
+          v-model="email"
+          placeholder="email"
+          class="text-input"
+        />
       </div>
       <div class="password">
-        <input type="password" v-model="password" placeholder="password" />
+        <input
+          type="password"
+          v-model="password"
+          placeholder="password"
+          class="text-input"
+        />
       </div>
-      <button type="submit">Register</button>
+      <button type="submit" class="btn btn-x mt-0">Register</button>
     </form>
   </div>
 </template>
@@ -22,7 +47,7 @@ export default {
     return {
       email: "",
       password: "",
-      error: ""
+      error: "",
     };
   },
   methods: {
@@ -34,26 +59,10 @@ export default {
           console.log("here");
           this.$router.replace({ name: "Home" });
         })
-        .catch(error => (this.error = error));
-    }
-  }
+        .catch((error) => (this.error = error));
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-.error {
-  color: red;
-  font-size: 18px;
-}
-input {
-  width: 400px;
-  padding: 30px;
-  margin: 20px;
-  font-size: 21px;
-}
-button {
-  width: 400px;
-  height: 75px;
-  font-size: 100%;
-}
-</style>
+<style lang="scss" scoped></style>

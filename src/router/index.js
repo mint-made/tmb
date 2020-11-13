@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Questionnaire from "../views/Questionnaire.vue";
+import QuestionnaireComplete from "../views/Questionnaire-Complete.vue";
 import Register from "../views/Register.vue";
 
 import firebase from "firebase/app";
@@ -32,6 +33,12 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register
+  },
+  {
+    path: "/questionnaire-complete",
+    name: "Questionnaire-Complete",
+    component: QuestionnaireComplete,
+    meta: { requiresAuth: true }
   }
 ];
 
