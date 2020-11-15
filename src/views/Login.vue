@@ -40,30 +40,27 @@
 </template>
 
 <script>
-import firebase from "firebase";
-import "firebase/auth";
+import { Auth } from "../firebaseInit";
 export default {
   data() {
     return {
       email: "",
       password: "",
-      error: "",
+      error: ""
     };
   },
   methods: {
     pressed() {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then((data) => {
+      Auth.signInWithEmailAndPassword(this.email, this.password)
+        .then(data => {
           console.log(data);
           this.$router.replace({ name: "Home" });
         })
-        .catch((error) => {
+        .catch(error => {
           this.error = error;
         });
-    },
-  },
+    }
+  }
 };
 </script>
 

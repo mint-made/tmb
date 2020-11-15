@@ -40,28 +40,25 @@
 </template>
 
 <script>
-import firebase from "firebase";
-import "firebase/auth";
+import { Auth } from "../firebaseInit";
 export default {
   data() {
     return {
       email: "",
       password: "",
-      error: "",
+      error: ""
     };
   },
   methods: {
     pressed() {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
+      Auth.createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
           console.log("here");
           this.$router.replace({ name: "Home" });
         })
-        .catch((error) => (this.error = error));
-    },
-  },
+        .catch(error => (this.error = error));
+    }
+  }
 };
 </script>
 

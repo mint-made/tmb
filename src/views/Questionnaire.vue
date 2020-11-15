@@ -18,6 +18,10 @@
     <h2 class="text-light text-left">
       <b>Strategy:</b> Business and Vendor Current and Goals
     </h2>
+    <div :key="question.topic" v-for="question in questions">
+      {{ question.topic }}, {{ question.value.start }}, {{ question.value.end }}
+    </div>
+
     <dual-slider
       v-for="question in questions"
       :key="question.topic"

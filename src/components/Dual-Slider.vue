@@ -52,14 +52,14 @@ export default {
   props: {
     questionData: Object,
     startValue: Number,
-    endValue: Number,
+    endValue: Number
   },
   data() {
     return {
       minThumb: this.questionData.value.start,
       maxThumb: this.questionData.value.end,
       spacing: 6,
-      topic: this.questionData.topic,
+      topic: this.questionData.topic
     };
   },
   methods: {
@@ -68,9 +68,9 @@ export default {
       const payload = {
         value: {
           start: this.minThumb,
-          end: this.maxThumb,
+          end: this.maxThumb
         },
-        topic: this.topic,
+        topic: this.topic
       };
       console.log("update value(payload =", payload);
       this.updateValue(payload);
@@ -80,7 +80,7 @@ export default {
     },
     generateImageUrl: function(iconName) {
       return "../assets/icons/" + iconName;
-    },
+    }
   },
   computed: {
     sliderMin: {
@@ -100,7 +100,7 @@ export default {
         } else {
           this.minThumb = val;
         }
-      },
+      }
     },
     sliderMax: {
       get: function() {
@@ -119,9 +119,9 @@ export default {
         } else {
           this.maxThumb = val;
         }
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 
@@ -215,7 +215,13 @@ input.dual-slider {
     background: #a1d0ff;
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -7px;
+    margin-top: -8px;
+    transition: width 0.2s, height 0.2s;
+    &:hover {
+      height: 26px;
+      width: 26px;
+      margin-top: -9px;
+    }
   }
   &.thumb-min::-webkit-slider-thumb {
     background: #fbbaa0;

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import db from "../components/firebaseInit";
+import { DB } from "../firebaseInit";
 
 Vue.use(Vuex);
 
@@ -249,16 +249,15 @@ export const store = new Vuex.Store({
       const dataSet = [];
       state.questions.forEach(question => {
         const dataItem = {
-          question: question.question,
-          value: {
-            start: question.value.start,
-            end: question.value.end
-          }
+          topic: question.topic,
+          startValue: question.value.start,
+          endValue: question.value.end
         };
         dataSet.push(dataItem);
       });
       console.log(dataSet);
-      db.collection("questionnaire")
+      //Send DataSet to the Firestore
+      DB.collection("questionnaire")
         .add({
           first_name: "firstName",
           last_name: "secondName",
@@ -271,6 +270,32 @@ export const store = new Vuex.Store({
         .catch(error => {
           console.error("Error submitting data: ", error);
         });
+
+      //Email DataSet
+      let dataSetCSV = [];
+      dataSet.forEach(item => {
+        dataSetCSV.push(`${item.topic},${item.startValue},${item.endValue}`);
+      });
+      dataSetCSV = dataSetCSV.join("\n");
+      const emailContent = `<div style="font-family:Tahoma, sans-serif;"><h1>A new TMB Questionnaire has been completed by $user on the $date</h1>
+      <h3>The questionnaire data can be found below in CSV format. Copy and paste the CSV data for use in a spreadsheet application.</h3></div>
+      <div style="display:flex; justify-content:center;">
+<textarea id="txta" rows="10" cols="80" style="border-radius:5px; padding:5px;
+font-family:Tahoma, sans-serif; border:3px solid #cccccc; width:60%; max-width:300px; min-width:200px; height:260px; margin:auto;" wrap="off" placeholder="Output Results" class="form-control">
+topic,startValue,endValue
+${dataSetCSV}
+</textarea>
+</div>`;
+      DB.collection("mail")
+        .add({
+          to: "thomaskupai@gmail.com",
+          message: {
+            subject: "TMB Questionnaire Completed!",
+            text: "This is the plaintext section of the email body.",
+            html: emailContent
+          }
+        })
+        .then(() => console.log("Queued email for delivery!"));
     }
   },
   actions: {

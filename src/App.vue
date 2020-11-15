@@ -16,8 +16,8 @@
 import Header from "./components/Top-Header";
 export default {
   components: {
-    "top-header": Header,
-  },
+    "top-header": Header
+  }
 };
 </script>
 <style lang="scss">
@@ -129,7 +129,6 @@ body {
   outline: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
-  cursor: pointer;
   border-radius: 5px;
   margin: 5px 5%;
 }
@@ -170,14 +169,25 @@ body {
   background: #f18d6f;
   cursor: pointer;
   border-radius: 18px;
+  transition: width 0.2s, height 0.2s;
 }
 .slider-start::-webkit-slider-thumb {
   background: #fbbaa0;
   border: 3px#f98c61 solid;
+  &:hover {
+    height: 26px;
+    width: 26px;
+    margin-top: -1px;
+  }
 }
 .slider-end::-webkit-slider-thumb {
   background: #c4bae5;
   border: 3px#9d8cd3 solid;
+  &:hover {
+    height: 26px;
+    width: 26px;
+    margin-top: -1px;
+  }
 }
 
 //button

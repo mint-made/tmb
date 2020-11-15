@@ -9,8 +9,7 @@
 </template>
 
 <script>
-import firebase from "firebase/app";
-import "firebase/auth";
+import { Auth } from "../firebaseInit";
 export default {
   name: "top-header",
   mounted() {
@@ -18,7 +17,7 @@ export default {
   },
   methods: {
     setupFirebase() {
-      firebase.auth().onAuthStateChanged(user => {
+      Auth.onAuthStateChanged((user) => {
         if (user) {
           // User is signed in.
           console.log("signed in");
@@ -31,19 +30,16 @@ export default {
       });
     },
     signOut() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.replace({ name: "login" });
-        });
-    }
+      Auth.signOut().then(() => {
+        this.$router.replace({ name: "login" });
+      });
+    },
   },
   data() {
     return {
-      loggedIn: false
+      loggedIn: false,
     };
-  }
+  },
 };
 </script>
 
@@ -53,15 +49,12 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  height: 46px;
-  width: 200px;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 .one-line {
-  display: flex;
-  justify-content: space-between;
-  width: 180px;
 }
 </style>

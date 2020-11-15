@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+# deploy to DigitalOcean
+
+# remove the vue.config.js file if present
+rm vue.config.js
+
 # abort on errors
 set -e
 
@@ -14,7 +19,7 @@ git add -A
 git commit -m 'deploy'
 
 # deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/mint-made/tmb.git master:gh-pages
+git push -f https://github.com/mint-made/tmb.git master:droplet-master
 
 cd -
 
