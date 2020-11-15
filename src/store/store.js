@@ -284,15 +284,24 @@ export const store = new Vuex.Store({
       dataSetCSV = dataSetCSV.join("\n");
 
       //Email DataSet
-      const emailContent = `<div style="color:#333; font-family: "Sailec-Regular",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;"><div><h1>A TMB Questionnaire has been completed by ${state.email} at ${payload.time}, ${payload.date}</h1>
-      <h3>The data can be found below in CSV format ready to be coppied into a spreadsheet application.</h3></div>
-      <div style="display:flex; justify-content:center;">
-<textarea id="txta" rows="10" cols="80" style="border-radius:5px; padding:16px;
-border:none; outline: none; width:60%; line-height:1.5; background-color:#eee; max-width:300px; min-width:200px; height:325px; margin:auto;" wrap="off" placeholder="Output Results" class="form-control">
+      const emailContent = `
+      
+      
+      <div style="font-family:system-ui,-apple-system, BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;">
+        <div style="text-align: center; position: relative; padding:0.75rem 1.25rem; margin-bottom:1rem; border:1px solid transparent; border-radius:0.25rem; color:#155724; background-color:#d4edda; border-color:#c3e6cb;">
+          <h1>A TMB Questionnaire has been completed by ${state.email} at ${payload.time}, ${payload.date}</h1>
+          <h3>The data can be found below in CSV format ready to be copied into a spreadsheet application.</h3>
+        </div>
+        <div style="display:flex; justify-content:center;">
+          <textarea id="txta" rows="10" cols="80" style="border-radius:0.25rem; padding:16px;
+          border:none; outline: none; width:60%; line-height:1.5; background-color:#eee; max-width:300px; min-width:200px; 
+          height:325px; margin:auto;" wrap="off" placeholder="Output Results" class="form-control">
 topic,startValue,endValue
 ${dataSetCSV}
-</textarea>
-</div></div>`;
+          </textarea>
+        </div>
+      </div>`;
+
       DB.collection("mail")
         .add({
           to: "thomaskupai@gmail.com",
