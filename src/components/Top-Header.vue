@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import { Auth } from "../firebaseInit";
 export default {
   name: "top-header",
@@ -16,30 +17,34 @@ export default {
     this.setupFirebase();
   },
   methods: {
+    ...mapActions({
+      updateEmail: "updateEmail"
+    }),
     setupFirebase() {
-      Auth.onAuthStateChanged((user) => {
+      Auth.onAuthStateChanged(user => {
         if (user) {
           // User is signed in.
-          console.log("signed in");
           this.loggedIn = true;
+          this.updateEmail(user.email);
         } else {
           // No user is signed in.
+          this.updateEmail("");
           this.loggedIn = false;
-          console.log("signed out", this.loggedIn);
         }
+        console.log("Logged in: ", this.loggedIn);
       });
     },
     signOut() {
       Auth.signOut().then(() => {
-        this.$router.replace({ name: "login" });
+        this.$router.replace({ name: "Login" });
       });
-    },
+    }
   },
   data() {
     return {
-      loggedIn: false,
+      loggedIn: false
     };
-  },
+  }
 };
 </script>
 

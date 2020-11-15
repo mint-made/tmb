@@ -18,7 +18,11 @@
     <h2 class="text-light text-left">
       <b>Strategy:</b> Business and Vendor Current and Goals
     </h2>
-    <div :key="question.topic" v-for="question in questions">
+    <div
+      class="hidden"
+      :key="'Values' + question.topic"
+      v-for="question in questions"
+    >
       {{ question.topic }}, {{ question.value.start }}, {{ question.value.end }}
     </div>
 
@@ -83,6 +87,9 @@ $green: rgb(0, 173, 0);
 }
 #btn-submit {
   margin-bottom: 100px;
+}
+.hidden {
+  display: none;
 }
 </style>
 

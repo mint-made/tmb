@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto mw-800">
+  <div class="m-auto mw-800 px-50">
     <div class="flex my-10">
       <div class="flex align-center">
         <img

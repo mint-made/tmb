@@ -14,12 +14,12 @@ export const store = new Vuex.Store({
           "Do you make small changes frequently, or larger changes infrequently?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Incremental",
-          end: "Revolutionary"
-        }
+          end: "Revolutionary",
+        },
       },
       {
         icon: require("../assets/icons/Appetite.png"),
@@ -28,12 +28,12 @@ export const store = new Vuex.Store({
           "Risk drives changes/projects or practical trade offs of time/needs lead?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Conservative",
-          end: "Risky"
-        }
+          end: "Risky",
+        },
       },
       {
         icon: require("../assets/icons/Focus.png"),
@@ -42,12 +42,12 @@ export const store = new Vuex.Store({
           "Are you focused on investments and performance or a client's financial lives?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Investment Centric",
-          end: "Client Centric"
-        }
+          end: "Client Centric",
+        },
       },
       {
         icon: require("../assets/icons/Vision.png"),
@@ -56,12 +56,12 @@ export const store = new Vuex.Store({
           "How far out do you want to plan your services and solutions?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Current Services",
-          end: "In 5 years"
-        }
+          end: "In 5 years",
+        },
       },
       {
         icon: require("../assets/icons/Scope-of-Services.png"),
@@ -70,12 +70,12 @@ export const store = new Vuex.Store({
           "From investment oversight to bookkeeping, tax, or even concierges?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Breadth (Many Servies)",
-          end: "Depth (Expert Specialities)"
-        }
+          end: "Depth (Expert Specialities)",
+        },
       },
       {
         icon: require("../assets/icons/Style.png"),
@@ -84,12 +84,12 @@ export const store = new Vuex.Store({
           "Do your clients have the same offerings, services, and reports?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Customized Services",
-          end: "Standardized reports and Services"
-        }
+          end: "Standardized reports and Services",
+        },
       },
       {
         icon: require("../assets/icons/Types-of-End-Clients.png"),
@@ -98,12 +98,12 @@ export const store = new Vuex.Store({
           "Are you clients very complex with complex estate and investments?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Complex",
-          end: "Simple"
-        }
+          end: "Simple",
+        },
       },
       {
         icon: require("../assets/icons/Cost-Drivers.png"),
@@ -112,12 +112,12 @@ export const store = new Vuex.Store({
           "What drives you need for a change to add value or save time?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Value",
-          end: "Efficiency"
-        }
+          end: "Efficiency",
+        },
       },
       {
         icon: require("../assets/icons/Organizational-Process.png"),
@@ -126,12 +126,12 @@ export const store = new Vuex.Store({
           "Do just a few (<3) people see a process end to end or are there many (>5) hand off points?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Decentralized/Many",
-          end: "Centralized/Few"
-        }
+          end: "Centralized/Few",
+        },
       },
       {
         icon: require("../assets/icons/Experience.png"),
@@ -140,12 +140,12 @@ export const store = new Vuex.Store({
           "Do you typically have successful technology implementations?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Naive",
-          end: "Knowledgable"
-        }
+          end: "Knowledgable",
+        },
       },
       {
         icon: require("../assets/icons/Vendor-Relationships.png"),
@@ -153,12 +153,12 @@ export const store = new Vuex.Store({
         question: "How do you approach service or system vendor?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Control",
-          end: "Trust"
-        }
+          end: "Trust",
+        },
       },
       {
         icon: require("../assets/icons/Operational-Service.png"),
@@ -167,12 +167,12 @@ export const store = new Vuex.Store({
           "Do you focus on clients and let others do perceived commodity services or its your value to make sure it is all done by you as no one cares as much?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Outsource",
-          end: "In-House"
-        }
+          end: "In-House",
+        },
       },
       {
         icon: require("../assets/icons/Technology-Service.png"),
@@ -181,12 +181,12 @@ export const store = new Vuex.Store({
           "The cloud offers better, safer, new more cost effective solutions or is technology safer and more reliable in house?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Outsource/Cloud/Hosted",
-          end: "In-House Application"
-        }
+          end: "In-House Application",
+        },
       },
       {
         icon: require("../assets/icons/Architecture.png"),
@@ -195,12 +195,12 @@ export const store = new Vuex.Store({
           "Is it important to have data flowing easily in and out of the system?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Open, like to manipulate data",
-          end: "Closed, leaving data as is"
-        }
+          end: "Closed, leaving data as is",
+        },
       },
       {
         icon: require("../assets/icons/Integration.png"),
@@ -209,33 +209,37 @@ export const store = new Vuex.Store({
           "Does a comprehensive pre-integrated system simpler and reduce data issues or does integrating many specific systems create a better solution?",
         value: {
           start: 10,
-          end: 90
+          end: 90,
         },
         label: {
           start: "Tightly coupled",
-          end: "Best in class/focused"
-        }
-      }
+          end: "Best in class/focused",
+        },
+      },
     ],
-    counter: 50
+    counter: 50,
+    email: "",
   },
   getters: {},
   mutations: {
+    UPDATEEMAIL(state, payload) {
+      state.email = payload.email;
+    },
     UPDATESTARTVALUE(state, payload) {
       const question = state.questions.find(
-        question => question.topic === payload.topic
+        (question) => question.topic === payload.topic
       );
       question.value.start = payload.value;
     },
     UPDATEENDVALUE(state, payload) {
       const question = state.questions.find(
-        question => question.topic === payload.topic
+        (question) => question.topic === payload.topic
       );
       question.value.end = payload.value;
     },
     UPDATEVALUE(state, payload) {
       const question = state.questions.find(
-        question => question.topic === payload.topic
+        (question) => question.topic === payload.topic
       );
       console.log(
         "update value vuex: question =",
@@ -245,60 +249,69 @@ export const store = new Vuex.Store({
       );
       question.value = payload.value;
     },
-    POSTDATA(state) {
+    POSTDATA(state, payload) {
+      //Create dataSet object for Firestore
       const dataSet = [];
-      state.questions.forEach(question => {
+      state.questions.forEach((question) => {
         const dataItem = {
           topic: question.topic,
           startValue: question.value.start,
-          endValue: question.value.end
+          endValue: question.value.end,
         };
         dataSet.push(dataItem);
       });
-      console.log(dataSet);
+
       //Send DataSet to the Firestore
       DB.collection("questionnaire")
         .add({
-          first_name: "firstName",
-          last_name: "secondName",
-          date: "11-11-2020",
-          responses: dataSet
+          email: state.email,
+          date: payload.date,
+          time: payload.time,
+          questionnaire: dataSet,
         })
-        .then(docRef => {
+        .then((docRef) => {
           console.log("Client added: ", docRef.id);
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Error submitting data: ", error);
         });
 
-      //Email DataSet
+      //Create dataSet CSV format for Email
       let dataSetCSV = [];
-      dataSet.forEach(item => {
+      dataSet.forEach((item) => {
         dataSetCSV.push(`${item.topic},${item.startValue},${item.endValue}`);
       });
       dataSetCSV = dataSetCSV.join("\n");
-      const emailContent = `<div style="font-family:Tahoma, sans-serif;"><h1>A new TMB Questionnaire has been completed by $user on the $date</h1>
-      <h3>The questionnaire data can be found below in CSV format. Copy and paste the CSV data for use in a spreadsheet application.</h3></div>
+
+      //Email DataSet
+      const emailContent = `<div style="color:#333; font-family: "Sailec-Regular",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;"><div><h1>A TMB Questionnaire has been completed by ${state.email} at ${payload.time}, ${payload.date}</h1>
+      <h3>The data can be found below in CSV format ready to be coppied into a spreadsheet application.</h3></div>
       <div style="display:flex; justify-content:center;">
-<textarea id="txta" rows="10" cols="80" style="border-radius:5px; padding:5px;
-font-family:Tahoma, sans-serif; border:3px solid #cccccc; width:60%; max-width:300px; min-width:200px; height:260px; margin:auto;" wrap="off" placeholder="Output Results" class="form-control">
+<textarea id="txta" rows="10" cols="80" style="border-radius:5px; padding:16px;
+border:none; outline: none; width:60%; line-height:1.5; background-color:#eee; max-width:300px; min-width:200px; height:325px; margin:auto;" wrap="off" placeholder="Output Results" class="form-control">
 topic,startValue,endValue
 ${dataSetCSV}
 </textarea>
-</div>`;
+</div></div>`;
       DB.collection("mail")
         .add({
           to: "thomaskupai@gmail.com",
           message: {
             subject: "TMB Questionnaire Completed!",
             text: "This is the plaintext section of the email body.",
-            html: emailContent
-          }
+            html: emailContent,
+          },
         })
         .then(() => console.log("Queued email for delivery!"));
-    }
+    },
   },
   actions: {
+    updateEmail({ commit }, payload) {
+      commit("UPDATEEMAIL", {
+        email: payload,
+      });
+      console.log("email changed: ", payload);
+    },
     updateValues({ commit }, payload) {
       const keys = payload.id.split("-");
       const topic = keys[0];
@@ -306,23 +319,27 @@ ${dataSetCSV}
       if (startOrEnd === "start") {
         commit("UPDATESTARTVALUE", {
           topic: topic,
-          value: payload.value
+          value: payload.value,
         });
       } else if (startOrEnd === "end") {
         commit("UPDATEENDVALUE", {
           topic: topic,
-          value: payload.value
+          value: payload.value,
         });
       }
     },
     updateValue({ commit }, payload) {
       commit("UPDATEVALUE", {
         topic: payload.topic,
-        value: payload.value
+        value: payload.value,
       });
     },
     logValues({ commit }) {
-      commit("POSTDATA");
-    }
-  }
+      const d = new Date();
+      commit("POSTDATA", {
+        date: d.toLocaleDateString(),
+        time: d.toLocaleTimeString(),
+      });
+    },
+  },
 });
