@@ -72,14 +72,14 @@
 
 <script>
 export default {
-  name: "Home",
+  name: 'Home',
   methods: {
     startQuestionnaire() {
       this.$router.push({
-        name: "Questionnaire"
+        name: 'Questionnaire',
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">

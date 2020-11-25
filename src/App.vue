@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import Header from "./components/Top-Header";
+import Header from './components/Top-Header';
 export default {
   components: {
-    "top-header": Header
-  }
+    'top-header': Header,
+  },
 };
 </script>
 <style lang="scss">
@@ -28,16 +28,16 @@ $darkest-blue: #2c3e50;
 $white: #ffffff;
 
 @font-face {
-  font-family: "Heebo";
-  src: local("Heebo"),
-    url("./fonts/Heebo-VariableFont_wght.ttf") format("truetype");
+  font-family: 'Heebo';
+  src: local('Heebo'),
+    url('./fonts/Heebo-VariableFont_wght.ttf') format('truetype');
 }
 
 body {
   margin: 0px;
   height: 100%;
   width: 100%;
-  background-image: url("../src/assets/bg.png");
+  background-image: url('../src/assets/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -141,52 +141,66 @@ body {
 .slider:active {
   outline: none;
 }
-//Firefox
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #f18d6f;
-  border: 3px#f16236 solid;
-  cursor: pointer;
-  border-radius: 18px;
-}
-.slider-start::-moz-range-thumb,
-.slider-start::-webkit-slider-thumb {
-  background: #fbbaa0;
-  border: 3px#f98c61 solid;
-}
-.slider-end::-moz-range-thumb {
-  background: #c4bae5;
-  border: 3px#9d8cd3 solid;
-}
 
-//Chrome + Safari
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
+// Single Sliders
+@mixin track() {
+  /* Common Styles */
   width: 25px;
   height: 25px;
-  background: #f18d6f;
   cursor: pointer;
   border-radius: 18px;
   transition: width 0.2s, height 0.2s;
-}
-.slider-start::-webkit-slider-thumb {
-  background: #fbbaa0;
-  border: 3px#f98c61 solid;
   &:hover {
-    height: 26px;
     width: 26px;
-    margin-top: -1px;
+    height: 26px;
   }
 }
-.slider-end::-webkit-slider-thumb {
+@mixin thumbStart() {
+  background: #fbbaa0;
+  border: 3px#f98c61 solid;
+}
+@mixin thumbEnd() {
   background: #c4bae5;
   border: 3px#9d8cd3 solid;
-  &:hover {
-    height: 26px;
-    width: 26px;
-    margin-top: -1px;
+}
+.slider {
+  &::-moz-range-thumb {
+    @include track;
+    width: 20px;
+    height: 20px;
+    &:hover {
+      width: 21px;
+      height: 21px;
+    }
+  }
+  &::-webkit-slider-thumb {
+    @include track;
+    -webkit-appearance: none;
+  }
+  &::-ms-track {
+    @include track;
+  }
+}
+.slider-start {
+  &::-webkit-slider-thumb {
+    @include thumbStart;
+  }
+  &::-moz-range-thumb {
+    @include thumbStart;
+  }
+  &::-ms-track {
+    @include thumbStart;
+  }
+}
+.slider-end {
+  &::-webkit-slider-thumb {
+    @include thumbEnd;
+  }
+  &::-moz-range-thumb {
+    @include thumbEnd;
+  }
+  &::-ms-track {
+    @include thumbStart;
   }
 }
 
@@ -324,7 +338,6 @@ input.text-input {
   letter-spacing: 3px;
   line-height: 0.5;
 }
-
 .vertical-align {
   display: flex;
   align-items: center;

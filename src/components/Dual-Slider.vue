@@ -46,41 +46,41 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 export default {
-  name: "DualSlider",
+  name: 'DualSlider',
   props: {
     questionData: Object,
     startValue: Number,
-    endValue: Number
+    endValue: Number,
   },
   data() {
     return {
       minThumb: this.questionData.value.start,
       maxThumb: this.questionData.value.end,
       spacing: 6,
-      topic: this.questionData.topic
+      topic: this.questionData.topic,
     };
   },
   methods: {
-    ...mapActions(["updateValue"]),
+    ...mapActions(['updateValue']),
     eUpdateValue: function() {
       const payload = {
         value: {
           start: this.minThumb,
-          end: this.maxThumb
+          end: this.maxThumb,
         },
-        topic: this.topic
+        topic: this.topic,
       };
-      console.log("update value(payload =", payload);
+      console.log('update value(payload =', payload);
       this.updateValue(payload);
     },
     capitalize: function(word) {
       return word.toUpperCase();
     },
     generateImageUrl: function(iconName) {
-      return "../assets/icons/" + iconName;
-    }
+      return '../assets/icons/' + iconName;
+    },
   },
   computed: {
     sliderMin: {
@@ -100,7 +100,7 @@ export default {
         } else {
           this.minThumb = val;
         }
-      }
+      },
     },
     sliderMax: {
       get: function() {
@@ -119,9 +119,9 @@ export default {
         } else {
           this.maxThumb = val;
         }
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 
@@ -132,6 +132,7 @@ $darker-blue: #52779c;
 $darkest-blue: #2c3e50;
 
 //general
+
 .question-container {
   min-height: 120px;
   margin: auto;
@@ -189,47 +190,139 @@ input.dual-slider:out-of-range {
   border: 2px solid #ff6347;
 }
 
+// input.dual-slider {
+//   -webkit-appearance: none;
+//   width: 100%;
+//   background-color: transparent;
+//   &:focus {
+//     outline: none;
+//   }
+//   &::-webkit-slider-runnable-track {
+//     width: 100%;
+//     height: 10px;
+//     background: #ffffff53;
+//     border-radius: 7px;
+//     box-shadow: none;
+//     border: 0;
+//   }
+//   &::-webkit-slider-thumb {
+//     z-index: 2;
+//     position: relative;
+//     box-shadow: 0px 0px 0px #000;
+//     border: 1px solid #2497e3;
+//     height: 25px;
+//     width: 25px;
+//     border-radius: 18px;
+//     background: #a1d0ff;
+//     cursor: pointer;
+//     -webkit-appearance: none;
+//     margin-top: -8px;
+//     transition: width 0.2s, height 0.2s;
+//     &:hover {
+//       height: 26px;
+//       width: 26px;
+//       margin-top: -9px;
+//     }
+//   }
+// }
+
+// Slider thumb config
+@mixin thumb {
+  z-index: 2;
+  position: relative;
+  border: 1px solid #2497e3;
+  height: 25px;
+  width: 25px;
+  border-radius: 18px;
+  background: #a1d0ff;
+  cursor: pointer;
+  margin-top: -8px;
+  transition: width 0.2s, height 0.2s;
+  pointer-events: auto;
+  &:hover {
+    height: 26px;
+    width: 26px;
+    margin-top: -9px;
+  }
+}
+// Runnable track config
+@mixin track {
+  width: 100%;
+  height: 10px;
+  background: #ffffff53;
+  border-radius: 7px;
+  box-shadow: none;
+  border: 0;
+  pointer-events: none;
+}
 input.dual-slider {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   background-color: transparent;
   &:focus {
     outline: none;
   }
+  // Track selectors
   &::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 10px;
-    background: #ffffff53;
-    border-radius: 7px;
-    box-shadow: none;
-    border: 0;
+    @include track;
   }
-  &::-webkit-slider-thumb {
-    z-index: 2;
-    position: relative;
-    box-shadow: 0px 0px 0px #000;
-    border: 1px solid #2497e3;
-    height: 25px;
-    width: 25px;
-    border-radius: 18px;
-    background: #a1d0ff;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -8px;
-    transition: width 0.2s, height 0.2s;
+  &::-moz-range-track {
+    @include track;
+  }
+  &::-ms-track {
+    @include track;
+  }
+  // Thumb selectors
+  &::-moz-range-thumb {
+    @include thumb;
+    width: 20px;
+    height: 20px;
     &:hover {
-      height: 26px;
-      width: 26px;
-      margin-top: -9px;
+      height: 21px;
+      width: 21px;
     }
   }
-  &.thumb-min::-webkit-slider-thumb {
-    background: #fbbaa0;
-    border: 3px#f98c61 solid;
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
   }
-  &.thumb-max::-webkit-slider-thumb {
-    background: #c4bae5;
-    border: 3px#9d8cd3 solid;
+  &::-ms-track {
+    @include thumb;
+  }
+}
+
+// Thumb min/max color and border config
+@mixin thumbMin() {
+  background: #fbbaa0;
+  border: 3px#f98c61 solid;
+}
+@mixin thumbMax() {
+  background: #c4bae5;
+  border: 3px#9d8cd3 solid;
+}
+input.thumb-min {
+  &::-webkit-slider-thumb {
+    @include thumbMin;
+  }
+  &::-moz-range-thumb {
+    @include thumbMin;
+    position: relative;
+    z-index: 5;
+  }
+  &::-ms-track {
+    @include thumbMin;
+  }
+}
+input.thumb-max {
+  &::-webkit-slider-thumb {
+    @include thumbMax;
+  }
+  &::-moz-range-thumb {
+    @include thumbMax;
+  }
+  &::-ms-track {
+    @include thumbMax;
   }
 }
 </style>
