@@ -34,26 +34,26 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 export default {
-  name: "QuestionSlider",
+  name: 'QuestionSlider',
   props: {
     questionData: Object,
     startValue: Number,
-    endValue: Number
+    endValue: Number,
   },
   methods: {
-    ...mapActions(["updateValues"]),
+    ...mapActions(['updateValues']),
     eUpdateValue: function(e) {
       this.updateValues({
         value: e.target.value,
-        id: e.target.id
+        id: e.target.id,
       });
     },
     capitalize: function(word) {
       return word.charAt(0).toUpperCase() + word.slice(1);
-    }
-  }
+    },
+  },
 };
 </script>
 
